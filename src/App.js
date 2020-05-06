@@ -1,16 +1,21 @@
 import React from 'react';
-import './App.css';
-import Employee from './emp';
-import Login from './login';
-function App() {
-  return (
-    <div className="App">
-   
-<Employee />
-<br />
-<Login />
-    </div>
-  );
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Form, FormGroup, Label, Input} from 'reactstrap'
 
-export default App;
+class Login extends React.Component {
+  render() {
+    return (
+      <Form classname="App">
+         <FormGroup>
+           <Label>UserName</Label>
+           <Input type="text" placeholder="UserName"></Input>
+         </FormGroup>
+         <FormGroup>
+           <Label>Password</Label>
+           <Input type="text" placeholder="Password"></Input>
+           </FormGroup>
+           </Form>
+          );
+}
+}
+export default Login;
