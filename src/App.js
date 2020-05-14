@@ -1,21 +1,26 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, FormGroup, Label, Input} from 'reactstrap'
+import './App.css';
+import React, {Component} from 'react';
+import Login from './Component/login/login';
+class App extends Component {
+state = {user: '', password: ''};
+render(){
+return(
+<div><Login username={this.state.user}
+                               password={this.state.password}
+                               error={this.state.error}
+                               handleUsername={(event) => this.setState({user: event.target.value})}
+                               handlePassword={(event) => this.setState({password: event.target.value})}
+                               submit={() => {
+                                   if (this.state.user === "user" &&
+                                       this.state.password === "pass") 
+                                        else {
+                                       this.setState({error: 'Not Valid User'});
+                                   } 
+                               }
+                               }
+            /></div>
+);
+ }
+}
+export default App;
 
-class Login extends React.Component {
-  render() {
-    return (
-      <Form classname="App">
-         <FormGroup>
-           <Label>UserName</Label>
-           <Input type="text" placeholder="UserName"></Input>
-         </FormGroup>
-         <FormGroup>
-           <Label>Password</Label>
-           <Input type="text" placeholder="Password"></Input>
-           </FormGroup>
-           </Form>
-          );
-}
-}
-export default Login;
